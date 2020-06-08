@@ -18,3 +18,14 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@media (min-width: 40.0625em) {
+  main {
+    position: relative; }
+  .verify-logo-right {
+    position: absolute;
+    right: -20px;
+    top: 80px;
+    width: 33.33333%; } }
+
+.verify-logo-right img {
+  width: 171px; }

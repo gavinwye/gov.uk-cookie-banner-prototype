@@ -1,0 +1,84 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukCheckboxes({
+        idPrefix: "organisation",
+        name: "organisation",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Validating your identity",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Before getting a criminal record check you need to validate your identity. You can do this online for free using GOV.UK Verify or a digital identity from another European country.",
+          classes: "govuk-body"
+        },
+        items: [
+          {
+            value: "hmrc",
+            text: "I agree to the Basic DBS Check Service using my name, date of birth and address provided by my digital identity "
+          },
+          {
+            value: "employment-tribunal",
+            html: "I have read and understood the basic DBS check online application <a href='prototype'>privacy policy<\/a> (opens in a new tab), which explains how the DBS will process my personal data when I'm applying online, before my application has been submitted"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "prove-your-id",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+      {{ govukDetails({
+        summaryText: "Other ways to apply",
+        html: "<p classgovuk-body>If you cannot validate your identity online, you can continue to apply. You still need your financial and identity documents to hand.</p>
+        <p classgovuk-body>But you'll also need to go to a UK post office in person after completing your application.</p>
+        <p classgovuk-body>You'll have 10 days to take your identity documents to a UK post office that offers the DBS ID validation service.</p>
+        <p classgovuk-body>We'll only start processing your application after you've validated your identity at a UK post office.</p>
+        <p classgovuk-body><a href='#'>Continue to application without using a digital identity</a></p>"
+      }) }}
+
+
+    </div>
+
+  </div>
+{% endblock %}

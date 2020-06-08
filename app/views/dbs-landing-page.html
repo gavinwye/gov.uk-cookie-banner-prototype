@@ -1,0 +1,90 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Is this your full name, date of birth, and address? </h1>
+
+    <p class="govuk-body">This is your name, date of birth, and address from your digital identity:</p>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span class="govuk-body govuk-!-font-weight-bold">Name</span><br>
+            Gavin Christopher Wye
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span class="govuk-body govuk-!-font-weight-bold">Date of birth</span><br>
+            12 October 1977
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span class="govuk-body govuk-!-font-weight-bold">Current address</span><br>
+            <p class="govuk-!-margin-bottom-0">3a Links Road<br>
+              Ashtead<br>
+              United Kingdom<br>
+              KT21 2HB</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend" id="radio-group-verify-correct">
+            <span class="govuk-visually-hidden">Is this your full name, date of birth, and address?</span>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio" id="radio-option-yes" name="radio-group-verify-correct" value="yes">
+              <label class="govuk-label govuk-radios__label" for="radio-option-yes" id="for-radio-option-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio" id="radio-option-no" name="radio-group-verify-correct" value="no">
+              <label class="govuk-label govuk-radios__label" for="radio-option-no" id="for-radio-option-no">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+      {{ govukDetails({
+        summaryText: "This is not my full name, what should I do?",
+        html: "<p class=\"govuk-body\">If the name provided is correct but it is not your full name, for example your middle name is missing, you should: </p><ol class=\"govuk-list govuk-list--number\">
+        <li>Select 'yes' and continue</li>
+        <li>Enter the missing names on the next page of the application</li>
+      </ol>"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "other-names"
+      }) }}
+
+    </div>
+
+  </div>
+  {% endblock %}

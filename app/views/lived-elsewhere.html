@@ -1,0 +1,98 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "changed-name",
+      name: "changed-name",
+      fieldset: {
+        legend: {
+          text: "Have you lived anywhere else from 2015 to now?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-form-group">
+      <p>You must tell us about all the addresses you've lived at in the last 5 years. You can't leave any gaps but it's fine to have overlapping dates.</p>
+
+      <p>You need to include any secondary addresses, for example student accommodation or if you work away from home.</p>
+
+
+
+      <div class="govuk-form-group">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary help-text-link">
+            <span class="govuk-details__summary-text">What is a secondary address?</span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>If you're a student and live in student accommodation during term time, but live with your parents (or a similar permanent home address) in the period between academic years, you need to tell us both addresses.</p>
+            <p>If, for example, you work away from home and spend months living at an alternative address that's not your permanent home address, you need to tell us this alternative address.</p>
+            <p>If the nature of your work means that you often spend 1 or 2 days in different places away from your permanent address, we don't need details of each of the places you visit.</p>
+          </div>
+        </details>
+      </div>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Address</th>
+            <th scope="col" class="govuk-table__header">Dates you lived there</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              3a Links Road
+              <br>Ashtead
+              <br>United Kingdom
+              <br>KT21 2HB
+            </td>
+            <td class="govuk-table__cell">
+              <span>2017 to now</span>
+            </td>
+            <td class="govuk-table__cell">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    {{ govukButton({
+      text: "Continue",
+      href: "ni-number"
+    }) }}
+
+  </div>
+
+</div>
+{% endblock %}

@@ -166,3 +166,93 @@ $govuk-assets-path: '/govuk/assets/';
         color: #ffffff; }
       .slides .govuk-error-summary__list a {
         color: #ffffff; }
+
+        // company selection
+        .company-wrapper.clear-left {
+          clear: left; }
+
+        .company {
+          border-bottom: 1px solid #b1b4b6;
+          text-align: center; }
+          @media (min-width: 40.0625em) {
+            .company {
+              border: 5px solid #b1b4b6;
+              margin-bottom: 30px; } }
+
+        .company-full-width {
+          padding: 0 15px; }
+
+        .company.no-underline {
+          border-bottom: none;
+          padding-bottom: 30px; }
+          @media (min-width: 40.0625em) {
+            .company.no-underline {
+              border: 5px solid #1d70b8;
+              margin-bottom: 30px; } }
+
+        .company-inner {
+          padding: 5px 0 18px; }
+          @media (min-width: 40.0625em) {
+            .company-inner {
+              padding: 20px; } }
+
+        .company-logo {
+          position: relative;
+          width: 50%;
+          padding-bottom: 25%;
+          margin: 0 auto 15px; }
+          @media (min-width: 40.0625em) {
+            .company-logo {
+              margin: 0 auto 15px;
+              width: 80%;
+              padding-bottom: 40%; } }
+
+        .company-logo-inner {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0; }
+
+        .company-logo-inner img,
+        .company-logo-inner input[type="image"] {
+          max-width: 100%; }
+
+        .company .govuk-button {
+          margin: 0 0 20px; }
+          @media (min-width: 20em) {
+            .company .govuk-button {
+              width: 65%; } }
+
+        .company dialog .govuk-button {
+          margin: 0 0 15px; }
+
+        .company-about {
+          font-family: "GDS Transport", Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-weight: 400;
+          font-size: 14px;
+          font-size: 0.875rem;
+          line-height: 1.14286;
+          margin-bottom: 0; }
+          @media print {
+            .company-about {
+              font-family: sans-serif; } }
+          @media (min-width: 40.0625em) {
+            .company-about {
+              font-size: 16px;
+              font-size: 1rem;
+              line-height: 1.25; } }
+          @media print {
+            .company-about {
+              font-size: 14pt;
+              line-height: 1.2; } }
+
+        .company-disconnect-text {
+          text-align: left; }
+
+          // HACKS
+          .govuk-hint-override{
+            color: $govuk-text-colour;
+          }

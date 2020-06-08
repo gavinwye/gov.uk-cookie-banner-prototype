@@ -1,0 +1,27 @@
+
+{% extends "redirect-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">DBS is processing your details</h1>
+    <p class="govuk-body">This may take a few seconds please bear with us.</p>
+
+
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">What is your email address?</h1>
+
+
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "What is your email address?",
+    isPageHeading: false,
+    classes: "govuk-visually-hidden"
+  },
+  hint: {
+    text: "The email address should be your personal one. If, for example you provide a shared email address, others may be able to view the result of your check.",
+    classes: "govuk-hint-override"
+  },
+  attributes: {
+    spellcheck: "false"
+  }
+}) }}
+
+<p class="govuk-body">we'll use the email to:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    send you general information about your application
+  </li>
+  <li>
+    send you links to track, share and view your result online
+  </li>
+</ul>
+
+
+{{ govukInsetText({
+  text: "You will not be able to view your result online if your check reveals a criminal record."
+}) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "passport"
+    }) }}
+
+  </div>
+
+</div>
+{% endblock %}

@@ -28,7 +28,7 @@ GOV.UK Prototype Kit
       type: "email",
       classes: "govuk-!-width-one-third",
       label: {
-        text: "UK National Insurace number"
+        text: "Passport number"
       },
       attributes: {
         spellcheck: "false"
@@ -44,13 +44,16 @@ GOV.UK Prototype Kit
       name: "how-contacted",
       fieldset: {
         legend: {
-          text: "Do you have a National Insurance number?",
+          text: "Do you have a current passport?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       hint: {
-        text: "If you can't provide a UK National Insurance number you can carry on with your application, but it might take us longer to process your check.",
+        html: "<p class=\"govuk-body\">If you can't provide your passport details you can still carry on with your application, but it might take us longer to process your check.</p>
+        <div class=\"govuk-inset-text\">
+          If you have an Irish passport card and want to provide this instead of your passport, you can enter the details of your card here.
+        </div>",
         classes: "govuk-hint-override"
       },
       items: [
@@ -68,16 +71,14 @@ GOV.UK Prototype Kit
       ]
     }) }}
 
-
-{{ govukDetails({
-  summaryText: "I don't know my National Insurance number",
-  text: "Never mind just continue."
-}) }}
-
+    {{ govukDetails({
+      summaryText: "I don't know my driving licence number",
+      text: "Never mind just continue."
+    }) }}
 
     {{ govukButton({
       text: "Continue",
-      href: "driving-licence"
+      href: "where-send"
     }) }}
 
   </div>

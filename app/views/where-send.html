@@ -21,63 +21,57 @@ GOV.UK Prototype Kit
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
     {% from "govuk/components/input/macro.njk" import govukInput %}
 
-    {% set yesHtml %}
-    {{ govukInput({
-      id: "contact-by-email",
-      name: "contact-by-email",
-      type: "email",
-      classes: "govuk-!-width-one-third",
+    {% set anotherAddressHtml %}
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
       label: {
-        text: "UK National Insurace number"
-      },
-      attributes: {
-        spellcheck: "false"
+        text: "Provide the address"
       }
     }) }}
     {% endset -%}
-
-
-
 
     {{ govukRadios({
       idPrefix: "how-contacted-conditional",
       name: "how-contacted",
       fieldset: {
         legend: {
-          text: "Do you have a National Insurance number?",
+          text: "Where would you like us to send your certificate?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       hint: {
-        text: "If you can't provide a UK National Insurance number you can carry on with your application, but it might take us longer to process your check.",
+        html: "<p class=\"govuk-body\">We can send your certificate to your current address, or another personal address (for example a family member), or your employer.</p>
+                <p class=\"govuk-body\">If you send your certificate to another address make sure you are able to check the information on it is correct.</p>
+                <div class=\"govuk-inset-text\">
+                  If you send your certificatge to a non-UK address it could take longer to arrive in the post.
+                </div>",
         classes: "govuk-hint-override"
       },
       items: [
         {
           value: "yes",
-          text: "Yes",
-          conditional: {
-            html: yesHtml
-          }
+          text: "My current address"
         },
         {
           value: "no",
-          text: "No / I cannot provide the details right now "
+          text: "Another address",
+          conditional: {
+            html: anotherAddressHtml
+          }
         }
       ]
     }) }}
 
-
-{{ govukDetails({
-  summaryText: "I don't know my National Insurance number",
-  text: "Never mind just continue."
-}) }}
-
+    {{ govukDetails({
+      summaryText: "I don't know my driving licence number",
+      text: "Never mind just continue."
+    }) }}
 
     {{ govukButton({
       text: "Continue",
-      href: "driving-licence"
+      href: "email"
     }) }}
 
   </div>

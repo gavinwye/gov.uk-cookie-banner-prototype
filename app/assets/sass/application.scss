@@ -29,3 +29,140 @@ $govuk-assets-path: '/govuk/assets/';
 
 .verify-logo-right img {
   width: 171px; }
+
+  .slides .slides-verify-logo {
+    max-width: 200px; }
+    .slides .slides-verify-logo img {
+      width: 100%; }
+
+      @media (min-width: 20em) and (max-width: 40.0525em) {
+  .hide-mobile {
+    display: none; } }
+    @media (min-width: 40.0625em) {
+  .show-mobile {
+    display: none; } }
+
+    .slides {
+      background-color: #1d70b8;
+      color: #ffffff;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      min-height: 480px;
+      padding: 30px; }
+      @media (min-width: 40.0625em) {
+        .slides {
+          margin-top: 30px; } }
+      @media (min-width: 40.0625em) {
+        .slides {
+          padding: 45px; } }
+      @media (min-width: 48.0625em) {
+        .slides {
+          padding: 75px 70px; } }
+      .slides h1 {
+        margin-top: 0;
+        margin-bottom: 30px;
+        color: #ffffff; }
+        @media (min-width: 20em) and (max-width: 19.99em) {
+          .slides h1 {
+            margin-top: 15px;
+            margin-bottom: 15px; } }
+      .slides h2,
+      .slides span {
+        color: #ffffff; }
+      .slides p,
+      .slides label,
+      .slides ul {
+        color: #ffffff;
+        font-family: "GDS Transport", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 1.11111; }
+        @media print {
+          .slides p,
+          .slides label,
+          .slides ul {
+            font-family: sans-serif; } }
+        @media (min-width: 40.0625em) {
+          .slides p,
+          .slides label,
+          .slides ul {
+            font-size: 24px;
+            font-size: 1.5rem;
+            line-height: 1.25; } }
+        @media print {
+          .slides p,
+          .slides label,
+          .slides ul {
+            font-size: 18pt;
+            line-height: 1.15; } }
+      .slides a,
+      .slides a:focus,
+      .slides a:hover {
+        color: inherit; }
+      .slides a:focus {
+        color: #1d70b8;
+        box-shadow: 0 -2px #ffffff, 0 4px #003078;
+        background-color: #ffffff; }
+      .slides .multiple-choice > label::before, .slides .multiple-choice > label::after {
+        background-color: #ffffff;
+        border-color: #0b0c0c; }
+      .slides .actions {
+        margin: 30px 0 15px; }
+        .slides .actions .button {
+          background: #ffffff;
+          color: #1d70b8;
+          font-weight: bold;
+          box-shadow: 0 2px 0 #134876; }
+      .slides .small-details {
+        font-family: "GDS Transport", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.25; }
+        @media print {
+          .slides .small-details {
+            font-family: sans-serif; } }
+        @media (min-width: 40.0625em) {
+          .slides .small-details {
+            font-size: 19px;
+            font-size: 1.1875rem;
+            line-height: 1.31579; } }
+        @media print {
+          .slides .small-details {
+            font-size: 14pt;
+            line-height: 1.15; } }
+      .slides .slides-verify-logo {
+        max-width: 200px; }
+        .slides .slides-verify-logo img {
+          width: 100%; }
+        @media (max-width: 19.99em) {
+          .slides .slides-verify-logo {
+            width: 140px; } }
+      .slides details summary {
+        color: #ffffff; }
+      .slides details .panel {
+        border-left-color: #ffffff; }
+      .slides details p,
+      .slides details ul {
+        font-size: 1em; }
+      .slides details summary:hover {
+        color: #f3f2f1; }
+      .slides .validation-message {
+        color: #ffffff; }
+      .slides .govuk-form-group--error {
+        border-left: 5px solid #ffffff; }
+      .slides .govuk-details__text {
+        border-left: 5px solid #ffffff; }
+      .slides .govuk-error-summary {
+        border: 5px solid #ffffff;
+        color: #ffffff; }
+      .slides .govuk-error-message {
+        color: #ffffff; }
+      .slides .govuk-error-summary__list a {
+        color: #ffffff; }

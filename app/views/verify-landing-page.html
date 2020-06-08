@@ -1,0 +1,62 @@
+
+{% extends "verify-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="content-inner slides">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <div class="slides-verify-logo hide-mobile">
+            <img srcset="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/govuk-verify-a7d57f55532feda2a43fd2cbb22a49869b477d2383d072510be2f534e25d496d.svg 1x" alt=" " role="presentation" src="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/govuk-verify-d5c22ad692b0181911125060e9ba208b1ff8778ca5730b24bef30b1a5ab38de9.png">
+          </div>
+          <div class="slides-verify-logo show-mobile">
+            <img srcset="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/govuk-verify-horizontal-7fb8731d8e616c100016880323b393c349337e6a6387673be38c2c0eef9bb2ea.svg 1x" alt=" " role="presentation" src="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/govuk-verify-horizontal-d379630f9694c5d1b89c52020420a824457ef5fc0e3daae1dd101a226c61ec90.png">
+          </div>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+          <h1 class="govuk-heading-l">Sign in with GOV.UK Verify</h1>
+
+          <form class="js-validate" id="start-page-form" novalidate="novalidate" action="/start" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="19ht2TSYcVW0sc0+X/yibYHVE83d4y7vMNWJObj2pXPx5QNakajGzSmh8jAyd72jsfJ9vtlRChjVmWyUzuo+FQ==">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input required="required" data-msg="Please select an option" piwik_event_tracking="journey_user_type" class="govuk-radios__input" id="start_form_selection_true" type="radio" value="true" name="start_form[selection]" aria-required="true">
+                    <label class="govuk-label govuk-radios__label" for="start_form_selection_true">This is my first time using GOV.UK Verify</label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input required="required" data-msg="Please select an option" piwik_event_tracking="journey_user_type" class="govuk-radios__input" type="radio" value="false" name="start_form[selection]" id="start_form_selection_false" aria-required="true">
+                    <label class="govuk-label govuk-radios__label" for="start_form_selection_false">I've already signed up for Verify</label>
+                    <span class="govuk-hint govuk-radios__hint">This includes if you've got part way through creating an identity account</span>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div id="validation-error-message-js"></div>
+
+            <div class="form-group-tight">
+              <div class="actions">
+                <input type="submit" name="commit" value="Continue" class="govuk-button verify-inverse-btn button" id="next-button">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -475,6 +475,15 @@ body:not(.js-enabled) .no-js-lowercase {
   line-height:1.15
  }
 }
+
+// payment summary
+.payment-summary {
+    margin-top: 30px;
+    border-top: 2px solid #1d70b8;
+    padding: 15px;
+    background-color: #f3f2f1;
+}
+
           // HACKS
           .govuk-hint-override{
             color: $govuk-text-colour;

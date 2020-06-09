@@ -1,0 +1,93 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Confirm your payment</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Card number"
+            },
+            value: {
+              text: "************7865"
+            }
+          },
+          {
+            key: {
+              text: "Expiry date"
+            },
+            value: {
+              text: "10/20"
+            }
+          },
+          {
+            key: {
+              text: "Name on card"
+            },
+            value: {
+              text: "Sam Phillips"
+            }
+          },
+          {
+            key: {
+              text: "Billing address"
+            },
+            value: {
+              html: "164 Strelly Road <br />Strelley <br /> Nottingham <br /> NG8 6PB <br /> United Kingdom "
+            }
+          },
+          {
+            key: {
+              text: "Confirmation email"
+            },
+            value: {
+              html: "sam.phillips@gmail.com"
+            }
+          }
+        ]
+      }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "success"
+        }) }}
+        <p class="govuk-body"><a href="#" class="govuk-link">Cancel payment</a></p>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <div class="payment-summary">
+          <h2 class="govuk-heading-m">Payment summary</h2>
+          <p class="govuk-body">Basic DBS check</p>
+          <p class="govuk-body">Total amount: <br><span class="govuk-!-font-size-36 govuk-!-font-weight-bold">£23.00</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

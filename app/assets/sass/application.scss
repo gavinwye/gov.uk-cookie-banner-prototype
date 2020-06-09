@@ -252,7 +252,242 @@ $govuk-assets-path: '/govuk/assets/';
         .company-disconnect-text {
           text-align: left; }
 
+          //COOKIES
+
+          .cookie-settings__form-wrapper {
+ display:none
+}
+.js-enabled .cookie-settings__form-wrapper {
+ display:block
+}
+.js-enabled .cookie-settings__no-js {
+ display:none
+}
+.cookie-settings__confirmation {
+ font-family:"nta", Arial, sans-serif;
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale;
+ font-weight:400;
+ font-size:16px;
+ line-height:1.25;
+ display:none;
+ margin-top:15px
+}
+@media print {
+ .cookie-settings__confirmation {
+  font-family:sans-serif
+ }
+}
+@media (min-width: 40.0625em) {
+ .cookie-settings__confirmation {
+  font-size:19px;
+  line-height:1.3157894737
+ }
+}
+@media print {
+ .cookie-settings__confirmation {
+  font-size:14pt;
+  line-height:1.15
+ }
+}
+.cookie-settings__gov-services {
+ margin-top:50px
+}
+
+// GOVUK PAY
+.accepted-cards {
+ display:block;
+ width:100%;
+ margin:15px 0 5px;
+ padding:0;
+ float:none;
+ overflow:hidden
+}
+@media (min-width: 40.0625em) {
+ .accepted-cards {
+  width:66.666%
+ }
+}
+.accepted-cards li {
+ display:block;
+ width:3rem;
+ height:0;
+ margin:0 10px 5px 0;
+ padding-bottom:2rem;
+ float:left;
+ background-image:url("https://www.payments.service.gov.uk/images/accepted-cards-sprite.png");
+ background-size:900% 200%
+}
+.accepted-cards .visa {
+ background-position:0% 100%
+}
+.accepted-cards.field-empty .visa,
+.accepted-cards .visa.selected {
+ background-position:0% 0%
+}
+.accepted-cards .master-card {
+ background-position:12.5% 100%
+}
+.accepted-cards.field-empty .master-card,
+.accepted-cards .master-card.selected {
+ background-position:12.5% 0%
+}
+.accepted-cards .american-express {
+ background-position:25% 100%
+}
+.accepted-cards.field-empty .american-express,
+.accepted-cards .american-express.selected {
+ background-position:25% 0%
+}
+.accepted-cards .jcb {
+ background-position:37.5% 100%
+}
+.accepted-cards.field-empty .jcb,
+.accepted-cards .jcb.selected {
+ background-position:37.5% 0%
+}
+.accepted-cards .diners-club {
+ background-position:50% 100%
+}
+.accepted-cards.field-empty .diners-club,
+.accepted-cards .diners-club.selected {
+ background-position:50% 0%
+}
+.accepted-cards .discover {
+ background-position:62.5% 100%
+}
+.accepted-cards.field-empty .discover,
+.accepted-cards .discover.selected {
+ background-position:62.5% 0%
+}
+.accepted-cards .maestro {
+ background-position:75% 100%
+}
+.accepted-cards.field-empty .maestro,
+.accepted-cards .maestro.selected {
+ background-position:75% 0%
+}
+.accepted-cards .visa-electron {
+ background-position:87.5% 100%
+}
+.accepted-cards.field-empty .visa-electron,
+.accepted-cards .visa-electron.selected {
+ background-position:87.5% 0%
+}
+.accepted-cards .unionpay {
+ background-position:100% 100%
+}
+.accepted-cards.field-empty .unionpay,
+.accepted-cards .unionpay.selected {
+ background-position:100% 0%
+}
+.accepted-cards-hint {
+ color:#626a6e
+}
+// DATE ITEM INPUT SEPPERATOR FROM ELEMENTS
+.govuk-date-input__item--with-separator {
+ position:relative;
+ margin-right:40px
+}
+.govuk-date-input__item--with-separator:after {
+ font-family:"GDS Transport",Arial,sans-serif;
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale;
+ font-weight:400;
+ font-size:36px;
+ font-size:2rem;
+ line-height:1.1111111111;
+ content:'/';
+ position:absolute;
+ top:71%;
+ right:-1.8rem;
+ transform:translate(0, -50%)
+}
+@media print {
+ .govuk-date-input__item--with-separator:after {
+  font-family:sans-serif
+ }
+}
+@media (min-width: 40.0625em) {
+ .govuk-date-input__item--with-separator:after {
+  font-size:27px;
+  font-size:1.6875rem;
+  line-height:1.1111111111
+ }
+}
+@media print {
+ .govuk-date-input__item--with-separator:after {
+  font-size:18pt;
+  line-height:1.15
+ }
+}
+
+// CVC FROM ELEMENTS
+body:not(.js-enabled) .generic-cvc {
+ display:block
+}
+body:not(.js-enabled) .govuk-form-group.cvc .hidden {
+ display:inline
+}
+body:not(.js-enabled) .no-js-lowercase {
+ display:inline;
+ text-transform:lowercase
+}
+.govuk-form-group.cvc .cvc {
+ float:left;
+ margin-right:15px
+}
+.govuk-form-group.cvc img {
+ position:relative;
+ top:-1px;
+ max-height:38px;
+ float:left;
+ margin-right:15px
+}
+.govuk-form-group.cvc .either {
+ font-family:"GDS Transport",Arial,sans-serif;
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale;
+ font-weight:400;
+ font-size:16px;
+ font-size:1rem;
+ line-height:1.25;
+ line-height:37px !important;
+ color:#626a6e;
+ float:left;
+ margin-right:15px
+}
+@media print {
+ .govuk-form-group.cvc .either {
+  font-family:sans-serif
+ }
+}
+@media (min-width: 40.0625em) {
+ .govuk-form-group.cvc .either {
+  font-size:19px;
+  font-size:1.1875rem;
+  line-height:1.3157894737
+ }
+}
+@media print {
+ .govuk-form-group.cvc .either {
+  font-size:14pt;
+  line-height:1.15
+ }
+}
           // HACKS
           .govuk-hint-override{
             color: $govuk-text-colour;
+          }
+          .float-right{
+            float: right;
+            clear: both;
+          }
+          .float-left{
+            float: left;
+            clear: both;
+          }
+          .clear{
+            clear: left;
+            display: block;
           }

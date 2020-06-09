@@ -1,0 +1,188 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">By continuing with your application you confirm that:</h1>
+
+
+    {{ govukInput({
+      label: {
+        text: "Card number",
+        classes: "govuk-!-font-weight-bold"
+      },
+      classes: "govuk-input",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    <ul class="accepted-cards field-empty">
+        <li class="visa" data-key="visa" data-credit="true" data-debit="true">
+          <span class="govuk-warning-text__assistive">
+            visa
+          </span>
+        </li>
+        <li class="master-card" data-key="master-card" data-credit="true" data-debit="true">
+          <span class="govuk-warning-text__assistive">
+            master-card
+          </span>
+        </li>
+        <li class="american-express" data-key="american-express" data-credit="true" data-debit="false">
+          <span class="govuk-warning-text__assistive">
+            american-express
+          </span>
+        </li>
+        <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false">
+          <span class="govuk-warning-text__assistive">
+            diners-club
+          </span>
+        </li>
+        <li class="discover" data-key="discover" data-credit="true" data-debit="false">
+          <span class="govuk-warning-text__assistive">
+            discover
+          </span>
+        </li>
+        <li class="jcb" data-key="jcb" data-credit="true" data-debit="false">
+          <span class="govuk-warning-text__assistive">
+            jcb
+          </span>
+        </li>
+        <li class="unionpay" data-key="unionpay" data-credit="true" data-debit="false">
+          <span class="govuk-warning-text__assistive">
+            unionpay
+          </span>
+        </li>
+  </ul>
+  <p class="govuk-body govuk-!-font-size-16">Accepted credit and debit card types </p>
+
+
+  <!-- ELEMENTS HTML -->
+
+  <div class="govuk-form-group govuk-clearfix govuk-!-margin-bottom-7  expiry-date" data-validation="expiryMonth">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-date-hint">
+      <legend>
+        <label class="govuk-label govuk-label--s" id="expiry-date-lbl" for="expiry-month">
+          <span class="expiry-date-label" data-label-replace="expiryMonth" data-original-label="Expiry date">
+            Expiry date
+          </span>
+        </label>
+      </legend>
+      <span class="govuk-hint govuk-!-margin-bottom-2" id="expiry-date-hint">
+        For example, 10/20</span>
+        <div class="govuk-date-input__item govuk-date-input__item--month govuk-date-input__item--with-separator">
+          <label class="govuk-label govuk-date-input__label" for="expiry-month">Month</label>
+          <input id="expiry-month" type="text" inputmode="numeric" pattern="[0-9]*" name="expiryMonth" value="" class="govuk-input govuk-date-input__input govuk-input--width-3" minlength="1" maxlength="2" autocomplete="cc-exp-month">
+        </div>
+        <div class="govuk-date-input__item govuk-date-input__item--year">
+          <label for="expiry-year" class="govuk-label govuk-date-input__label">Year</label>
+          <input id="expiry-year" type="text" inputmode="numeric" pattern="[0-9]*" name="expiryYear" value="" minlength="2" maxlength="4" class="govuk-input govuk-date-input__input govuk-input--width-3" autocomplete="cc-exp-year" data-last-of-form-group="" data-required="">
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- /ELEMENTS HTML -->
+
+{{ govukInput({
+  label: {
+    text: "Name on card",
+    classes: "govuk-!-font-weight-bold"
+  },
+  id: "event-name",
+  name: "event-name"
+}) }}
+
+<!-- ELEMENTS HTML -->
+<div class="govuk-form-group cvc govuk-clearfix" data-validation="cvc">
+  <label id="cvc-lbl" for="cvc" class="govuk-label govuk-label--s">
+    <span class="cvc-label" data-label-replace="cvc" data-original-label="Card security code">
+      Card security code
+    </span>
+    <span class="govuk-hint govuk-!-margin-bottom-2">
+      <span class="generic-cvc">
+        The last 3 digits on the back of the card
+      </span>
+    </span>
+  </label>
+  <input id="cvc" type="text" inputmode="numeric" pattern="[0-9]*" value="" name="cvc" class="govuk-input govuk-input--width-3 cvc" maxlength="4" autocomplete="cc-csc">
+  <img src="https://www.payments.service.gov.uk/images/security-code.png" class="generic-cvc" alt="The last 3 digits on the back of the card">
+</div>
+
+<!-- /ELEMENTS HTML -->
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<p class="govuk-body-l govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">Billing address</span></p>
+<p class="govuk-body govuk-hint">This is the address associated with the card</p>
+{{ govukInput({
+  label: {
+    text: "Country or territory"
+  },
+  id: "countryOrTerritory",
+  name: "countryOrTerritory"
+}) }}
+{{ govukInput({
+  label: {
+    text: "Building number or name and street "
+  },
+  id: "countryOrTerritory",
+  name: "countryOrTerritory"
+}) }}
+{{ govukInput({
+  label: {
+    text: "",
+    visuallyHiddenText: "Building number or name and street "
+  },
+  id: "countryOrTerritory",
+  name: "countryOrTerritory"
+}) }}
+{{ govukInput({
+  label: {
+    text: "Town or city "
+  },
+  id: "countryOrTerritory",
+  name: "countryOrTerritory"
+}) }}
+{{ govukInput({
+  label: {
+    text: "Postcode "
+  },
+  classes: "govuk-input--width-10",
+  id: "width-10",
+  name: "width-10"
+}) }}
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<p class="govuk-body-l govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">Contact ddetails</span></p>
+<p class="govuk-body govuk-hint">We’ll send your payment confirmation here</p>
+{{ govukInput({
+  label: {
+    text: "Email "
+  },
+  id: "countryOrTerritory",
+  name: "countryOrTerritory"
+}) }}
+
+  {{ govukButton({
+    text: "Continue to payment",
+    href: "check-your-details"
+  }) }}
+  <p class="govuk-body"><a href="#" class="govuk-link">Cancel payment</a></p>
+</div>
+
+</div>
+{% endblock %}

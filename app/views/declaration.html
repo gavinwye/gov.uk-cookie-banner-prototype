@@ -1,0 +1,66 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">By continuing with your application you confirm that:</h1>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    the information you have given is true
+  </li>
+  <li>
+    you'll pay £23 for your application
+  </li>
+</ul>
+
+{{ govukWarningText({
+  text: "You could be prosecuted if you knowingly give false information in your application.",
+  iconFallbackText: "Warning"
+}) }}
+
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Which types of waste do you transport?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "agree to terms and conditions",
+      html: 'I agree to the <a href="">terms and conditions</a> (opens in a new tab)'
+    }
+  ]
+}) }}
+
+    {{ govukButton({
+      text: "Continue to payment",
+      href: "card-details"
+    }) }}
+
+  </div>
+
+</div>
+{% endblock %}

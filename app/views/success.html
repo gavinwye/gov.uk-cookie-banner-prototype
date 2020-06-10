@@ -44,4 +44,30 @@ GOV.UK Prototype Kit
       </p>
     </div>
   </div>
+  <script>
+   var num = 1;
+   function addCookie(){
+      document.cookie = num+" = "+num;
+      num++;
+   }
+   function listCookies(){
+      var result = document.cookie;
+      document.getElementById("list").innerHTML = result;
+   }
+   function removeCookies() {
+      var res = document.cookie;
+      var multiple = res.split(";");
+      for(var i = 0; i < multiple.length; i++) {
+         var key = multiple[i].split("=");
+         document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+      }
+   }
+</script>
+<!-- <button onclick = 'addCookie()'>ADD</button><br>
+<button onclick = 'listCookies()'>LIST COOKIES</button><br> -->
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<p class="govuk-heading-m">Remove cookies</p>
+<button class="govuk-button" onclick = 'removeCookies()'>REMOVE COOKIES</button>
+<!-- <h1>Cookies List</h1> -->
+<!-- <p id = "list"></p> -->
 {% endblock %}

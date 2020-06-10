@@ -190,7 +190,28 @@ $(document).ready(function () {
 $(function(){
   var serviceTypes = {
     "/": "GOVUK",
-    "/validate-id": "DBS"
+    "/validate-id": "DBS",
+    "/prove-your-id": "VERIFY",
+    "/verify-landing-page": "VERIFY",
+    "/account-select": "VERIFY",
+    "/post-office-complete": "VERIFY",
+    "/dbs-processing": "DBS",
+    "/dbs-landing-page": "DBS",
+    "/other-names": "DBS",
+    "/where-born": "DBS",
+    "/lived-elsewhere": "DBS",
+    "/ni-number": "DBS",
+    "/driving-licence": "DBS",
+    "/passport": "DBS",
+    "/where-send": "DBS",
+    "/email": "DBS",
+    "/check-your-details": "DBS",
+    "/declaration": "DBS",
+    "/card-details": "PAY",
+    "/confirm-payment": "PAY",
+    "/success": "DBS"
+
+
   }
 
   var currentlyAcceptedServiceTypes = getCookie("acceptedServiceTypes")
@@ -235,4 +256,3 @@ function getCookie(cookieName) {
   return false;
 }
 // SHOW HIDE SOMETHING
-

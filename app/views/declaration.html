@@ -36,26 +36,7 @@ GOV.UK Prototype Kit
   iconFallbackText: "Warning"
 }) }}
 
-{{ govukCheckboxes({
-  idPrefix: "waste",
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: "Which types of waste do you transport?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "Select all that apply."
-  },
-  items: [
-    {
-      value: "agree to terms and conditions",
-      html: 'I agree to the <a href="">terms and conditions</a> (opens in a new tab)'
-    }
-  ]
-}) }}
+
 
     {{ govukButton({
       text: "Continue to payment",

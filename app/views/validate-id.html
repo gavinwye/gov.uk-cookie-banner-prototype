@@ -5,6 +5,8 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% set cookie = 'dbs' %}
+
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -12,7 +14,7 @@
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-  {{ govukBreadcrumbs({
+  <!-- {{ govukBreadcrumbs({
     items: [
       {
         text: "Home",
@@ -26,7 +28,7 @@
         text: "Subsection"
       }
     ]
-  }) }}
+  }) }} -->
 {% endblock %}
 
 {% block content %}

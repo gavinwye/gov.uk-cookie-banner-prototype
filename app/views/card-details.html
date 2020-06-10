@@ -5,6 +5,8 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% set cookie = 'pay' %}
+
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -18,7 +20,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">By continuing with your application you confirm that:</h1>
+    <h1 class="govuk-heading-l">Enter card details:</h1>
 
 
     {{ govukInput({

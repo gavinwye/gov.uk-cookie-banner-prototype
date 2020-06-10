@@ -5,6 +5,8 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% set cookie = 'verify' %}
+
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -35,7 +37,10 @@ GOV.UK Prototype Kit
                       <input type="image" src="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/experian.png" alt="Experian logo">
                     </div>
                   </div>
-                  <button name="https://www.experianidentityservice.co.uk/Saml/" type="submit" class="govuk-button" value="Experian">Select Experian</button>
+                  {{ govukButton({
+                    text: "Select Experian",
+                    href: "post-office-complete"
+                  }) }}
                 </div>
               </div>
             </div>
@@ -65,7 +70,10 @@ GOV.UK Prototype Kit
                       <input type="image" src="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/barclays.png" alt="Barclays logo">
                     </div>
                   </div>
-                  <button name="https://gateway.identity.barclays.co.uk" type="submit" class="govuk-button" value="Barclays">Select Barclays</button>
+                  {{ govukButton({
+                    text: "Select Barclays",
+                    href: "post-office-complete"
+                  }) }}
                 </div>
               </div>
             </div>
@@ -78,7 +86,10 @@ GOV.UK Prototype Kit
                       <input type="image" src="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/secureidentity.png" alt="SecureIdentity logo">
                     </div>
                   </div>
-                  <button name="https://verify.secureidentity.co.uk" type="submit" class="govuk-button" value="SecureIdentity">Select SecureIdentity</button>
+                  {{ govukButton({
+                    text: "Select SecureIdentity",
+                    href: "post-office-complete"
+                  }) }}
                 </div>
               </div>
             </div>
@@ -92,7 +103,10 @@ GOV.UK Prototype Kit
                       <input type="image" src="https://gds-verify-frontend-assets.s3.amazonaws.com/5ac9ea1-7e17cff/digidentity.png" alt="Digidentity logo">
                     </div>
                   </div>
-                  <button name="https://auth.digidentity.eu/sso/cabinet" type="submit" class="govuk-button" value="Digidentity">Select Digidentity</button>
+                  {{ govukButton({
+                    text: "Select Digidentity",
+                    href: "post-office-complete"
+                  }) }}
                 </div>
               </div>
             </div>

@@ -1,0 +1,29 @@
+
+{% extends "govuk-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% set cookie = 'GOV.UK Pay' %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">This is a prototype</h1>
+    <p class="govuk-body">The link or button you clicked doesn't work.</p>
+    <button class="govuk-button" value="Go Back From Whence You Came!" onclick="history.back(-1)">Go back to the previous page</button>
+
+  </div>
+</div>
+{% endblock %}
